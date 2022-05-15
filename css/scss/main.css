@@ -1,0 +1,77 @@
+body {
+  font-family: 'Noto Sans TC', sans-serif !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  -webkit-transition: all 2s;
+  transition: all 2s;
+}
+
+.fade-leave-to {
+  opacity: 0;
+}
+
+#Home {
+  background-image: url(/images/index.jpg);
+  height: 100vh;
+  background-position: center;
+}
+
+#logo {
+  background-color: #AADDFF;
+  color: #1264b3;
+}
+
+#menu .modal-dialog {
+  width: 18.75rem;
+  -webkit-animation: MoveToLeft 0.8s;
+          animation: MoveToLeft 0.8s;
+}
+
+#menu .modal-dialog h4 {
+  color: #ffffff;
+}
+
+#menu .modal-dialog h4:hover {
+  color: #DF0117;
+}
+
+@-webkit-keyframes MoveToLeft {
+  0% {
+    -webkit-transform: translateX(300px);
+            transform: translateX(300px);
+  }
+}
+
+@keyframes MoveToLeft {
+  0% {
+    -webkit-transform: translateX(300px);
+            transform: translateX(300px);
+  }
+}
+
+@media (max-width: 768px) {
+  #menu .modal-dialog {
+    width: 12.5rem;
+  }
+}
+
+.skillsBlock:hover {
+  background-color: #ffffff;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.swiper-pagination-bullet-active {
+  background: #2256BD;
+}
+/*# sourceMappingURL=main.css.map */

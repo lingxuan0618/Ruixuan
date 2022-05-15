@@ -1,0 +1,66 @@
+body {
+  font-family: 'Noto Sans TC', sans-serif !important;
+}
+
+.cursor-pointer{
+  cursor: pointer;
+}
+
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 2s;
+}
+.fade-leave-to {
+  opacity: 0;
+}
+
+#Home {
+  background-image: url(/images/index.jpg);
+  height: 100vh;
+  background-position:center;
+}
+
+#logo {
+  background-color: #AADDFF;
+  color: #1264b3;
+}
+
+#menu{
+  .modal-dialog {
+    width: 18.75rem;
+    animation:MoveToLeft 0.8s;
+    h4{
+      color: #ffffff;
+      &:hover{
+        color: #DF0117;
+      }
+    }
+  }
+}
+
+@keyframes MoveToLeft{
+  0%{transform:translateX(300px);}
+}
+
+@media (max-width: 768px) {
+  #menu{
+    .modal-dialog {
+      width: 12.5rem;
+    }
+  }
+}
+
+.skillsBlock {
+  &:hover {
+    background-color: #ffffff;
+    border-radius: 0.25rem;
+    cursor: pointer;
+  }
+}
+// 輪播按鈕顏色
+.swiper-pagination-bullet-active{
+  background: #2256BD;
+}
