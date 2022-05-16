@@ -17,20 +17,21 @@
 <body>
   <div id="RuiXuan">
     <div>
-      <div class="position-fixed px-2 bg-white w-p100" style="opacity: 0.8;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);z-index: 10;">
+      <div :class="{'hideContent': showNav === false}" class="position-fixed px-2 bg-white w-p100"
+      style="opacity: 0.8;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);z-index: 10;">
         <div class="d-flex justify-content-between align-items-center">
           <a id="logo" href="#Home"
           class="d-flex align-items-center justify-content-center rounded-circle h-8 w-8 cursor-pointer">
             <h3>Rui</h3>
           </a>
-          <div @click="toggleMenu" class="cursor-pointer" data-bs-toggle="modal" data-bs-target="#menu">
+          <div class="cursor-pointer" data-bs-toggle="modal" data-bs-target="#menu">
             <i class="bi bi-list" style="font-size: 2.25rem;"></i>
           </div>
         </div>
       </div>
     </div>
-    <div class="position-fixed" style="bottom: 8%; right: 1%;">
-      <a href="#Home"><h1><i class="bi bi-arrow-up-circle"></i></h1></a>
+    <div :class="{'d-none': showBackTop === false}" class="position-fixed" style="bottom: 8%; right: 1%;">
+      <a href="#Home"><h1><i class="bi bi-arrow-up-circle" style="font-size: 2rem;"></i></h1></a>
     </div>
     <!-- Home -->
     <section id="Home" class="d-flex justify-content-center align-items-center" style="background-image: url(images/index.jpg);">
@@ -68,6 +69,7 @@
                 <pre><h4>
 ▹ Goater • 哥德廚具股份有限公司
 　2020.06 ~ 至今
+
 　- ERP 應用專員
 　- MIS
 　- 營管助理
@@ -77,6 +79,7 @@
                 <pre><h4>
 ▹ Whocall • 走著瞧股份有限公
 　2019.06 ~ 2020.06
+
 　- QA 實習生
                 </h4></pre>
               </div>
@@ -102,6 +105,7 @@
             <pre class="mb-0"><h4>
 ▹ Goater • 哥德廚具股份有限公司
 　2020.06 ~ 至今
+
 　- ERP 應用專員
 　- MIS
 　- 營管助理
@@ -110,6 +114,7 @@
           <div>
             <pre class="mb-0"><h4>
 ▹ Whocall • 走著瞧股份有限公
+
 　2019.06 ~ 2020.06
 　- QA 實習生
             </h4></pre>
@@ -189,14 +194,14 @@
     </section>
     <footer class="bg-mainBlue">
       <div class="d-flex p-4 justify-content-md-between">
-        <div class="d-flex col-12 col-md-8">
+        <div class="d-flex col-12 col-md-6">
           <div v-for="item in footerMenu" :key="item.name" class="col-4 col-md-2">
             <a :href="item.href" class="text-center"><h4>{{item.name}}</h4></a>
           </div>
         </div>
         <div class="d-none d-md-flex cursor-pointer"
         data-bs-toggle="modal" data-bs-target="#iconCopyRight">
-          All icon designed by Freepik,Smashicons,srip from Flaticon
+          <span style="font-size: 0.5rem;">All icon designed by Freepik,Smashicons,srip from Flaticon</span>
         </div>
       </div>
     </footer>
@@ -250,7 +255,7 @@
     const typed = new Typed('#typed', {
       stringsElement: '#typed-strings',
       typeSpeed: 70,
-      startDelay: 1200,
+      startDelay: 60,
       backSpeed: 50,
       backDelay: 500,
       loop: true,

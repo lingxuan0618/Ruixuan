@@ -62,6 +62,9 @@ body {
   #menu .modal-dialog {
     width: 12.5rem;
   }
+  .hideContent {
+    display: none !important;
+  }
 }
 
 .skillsBlock:hover {

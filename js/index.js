@@ -1,7 +1,8 @@
 const RuiXuanApp = Vue.createApp({
   data() {
     return {
-      message: 'Hello Vue!',
+      showNav: true,
+      showBackTop: false,
       interestCarousel: [
         {
           url: 'images/interesting/photography.jpg',
@@ -117,6 +118,21 @@ const RuiXuanApp = Vue.createApp({
     gotoPosition(e) {
       console.log(e);
     },
+    handleScroll() {
+      let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+      let screenHeight = window.screen.height;
+      if(scrollTop > 10) {
+        this.showNav = false;
+        this.showBackTop = true;
+      } else {
+        this.showNav = true;
+        this.showBackTop = false;
+      }
+      console.log(scrollTop);
+    },
+  },
+  created() {
+    window.addEventListener("scroll", this.handleScroll);
   },
 })
 RuiXuanApp.mount('#RuiXuan');
