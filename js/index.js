@@ -4,33 +4,33 @@ const RuiXuanApp = Vue.createApp({
       message: 'Hello Vue!',
       interestCarousel: [
         {
-          url: '/images/interesting/photography.jpg',
+          url: 'images/interesting/photography.jpg',
           name: 'Photography',
         },
         {
-          url: '/images/interesting/Volleyball.jpg',
+          url: 'images/interesting/Volleyball.jpg',
           name: 'Volleyball',
         },
         {
-          url: '/images/interesting/basketball.jpg',
+          url: 'images/interesting/basketball.jpg',
           name: 'basketball',
         },
       ],
       skillsList: [
         {
-          url: '/images/icon/erp.png',
+          url: 'images/icon/erp.png',
           name: 'ERP',
         },
         {
-          url: '/images/icon/technical-support.png',
+          url: 'images/icon/technical-support.png',
           name: 'MIS',
         },
         {
-          url: '/images/icon/python.png',
+          url: 'images/icon/python.png',
           name: 'Python',
         },
         {
-          url: '/images/icon/database.png',
+          url: 'images/icon/database.png',
           name: 'SQL',
         },
       ],

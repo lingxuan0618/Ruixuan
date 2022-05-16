@@ -21,7 +21,6 @@ body {
 }
 
 #Home {
-  background-image: url(images/index.jpg);
   height: 100vh;
   background-position: center;
 }
