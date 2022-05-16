@@ -8,11 +8,11 @@ const RuiXuanApp = Vue.createApp({
           name: 'Photography',
         },
         {
-          url: 'images/interesting/Volleyball.jpg',
+          url: 'images/interesting/Volleyball.JPG',
           name: 'Volleyball',
         },
         {
-          url: 'images/interesting/basketball.jpg',
+          url: 'images/interesting/basketball.JPG',
           name: 'basketball',
         },
       ],
