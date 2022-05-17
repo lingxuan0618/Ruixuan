@@ -48,12 +48,12 @@
       </div>
     </section>
     <!-- About -->
-    <section id="About" class="d-flex flex-column flex-md-row justify-content-md-center align-items-md-center vh-100">
-      <div class="col-12 col-md-4">
+    <section id="About" class="d-flex flex-column flex-sm-row justify-content-sm-center align-items-sm-center vh-100">
+      <div class="col-12 col-sm-4">
         <img src="images/personal.JPG" alt="" class="w-p100">
       </div>
       <!-- 電腦板顯示 -->
-      <div class="d-none d-md-flex flex-column justify-content-center w-90 p-5 bg-linen">
+      <div class="d-none d-sm-flex flex-column justify-content-center w-90 p-5 bg-linen">
         <div class="d-flex justify-content-between align-items-center pt-6">
           <div class="border-black" style="border-left: 0.25rem solid #E9E9E9;">
             <h2 class="ps-1">劉睿璇</h2>
@@ -77,7 +77,7 @@
               </div>
               <div class="swiper-slide">
                 <pre><h4>
-▹ Whocall • 走著瞧股份有限公
+▹ Whocall • 走著瞧股份有限公司
 　2019.06 ~ 2020.06
 
 　- QA 實習生
@@ -92,7 +92,7 @@
         </div>
       </div>
       <!-- 手機板顯示-不輪播 -->
-      <div class="d-md-none d-flex flex-column justify-content-evenly flex-grow-1 px-5 bg-linen">
+      <div class="d-sm-none d-flex flex-column justify-content-evenly flex-grow-1 px-5 bg-linen">
         <transition name="fade"></transition>
         <div class="d-flex justify-content-between align-items-center pt-6">
           <div class="border-black" style="border-left: 0.25rem solid #E9E9E9;">
@@ -113,7 +113,7 @@
           </div>
           <div>
             <pre class="mb-0"><h4>
-▹ Whocall • 走著瞧股份有限公
+▹ Whocall • 走著瞧股份有限公司
 
 　2019.06 ~ 2020.06
 　- QA 實習生
@@ -128,7 +128,7 @@
     <!-- Skills -->
     <section id="Skills" class="d-flex justify-content-center align-items-center vh-100 bg-mainBlue">
       <!-- 電腦板顯示 -->
-      <div class="d-none d-md-flex align-items-center justify-content-evenly bg-bgBlue"
+      <div class="d-none d-sm-flex align-items-center justify-content-evenly bg-bgBlue"
       style="min-width: 70vw;min-height: 50vh;">
         <div v-for="item in skillsList" :key="item.name" class="skillsBlock p-2">
           <img :src="item.url" alt="" class="w-30">
@@ -136,7 +136,7 @@
         </div>
       </div>
       <!-- 手機板顯示 -->
-      <div class="d-md-none d-flex flex-column justify-content-evenly h-p100">
+      <div class="d-sm-none d-flex flex-column justify-content-evenly h-p100">
         <div v-for="(item, index) in skillsList" :key="item.name"
         class="d-flex align-content-center"
         :class="{'flex-row-reverse': index % 2 !== 0}">
@@ -175,7 +175,7 @@
       </div>
     </section>
     <!-- Interest -->
-    <section id="Interest" class="d-flex flex-column justify-content-md-center align-items-center vh-100 mt-10 mt-md-0">
+    <section id="Interest" class="d-flex flex-column justify-content-sm-center align-items-center vh-100 mt-10 mt-sm-0">
       <div class="p-1 bg-mainBlue rounded text-center" style="width: 75vw;">
         <h2>Interest</h2>
       </div>
@@ -193,13 +193,13 @@
       </div>
     </section>
     <footer class="bg-mainBlue">
-      <div class="d-flex p-4 justify-content-md-between">
-        <div class="d-flex col-12 col-md-6">
-          <div v-for="item in footerMenu" :key="item.name" class="col-4 col-md-2">
+      <div class="d-flex p-4 justify-content-sm-between">
+        <div class="d-flex col-12 col-sm-6">
+          <div v-for="item in footerMenu" :key="item.name" class="col-4 col-sm-2">
             <a :href="item.href" class="text-center"><h4>{{item.name}}</h4></a>
           </div>
         </div>
-        <div class="d-none d-md-flex cursor-pointer"
+        <div class="d-none d-sm-flex cursor-pointer"
         data-bs-toggle="modal" data-bs-target="#iconCopyRight">
           <span style="font-size: 0.5rem;">All icon designed by Freepik,Smashicons,srip from Flaticon</span>
         </div>
@@ -251,40 +251,7 @@
 
   <!-- 自定義js -->
   <script src="js/index.js"></script>
-  <script>
-    const typed = new Typed('#typed', {
-      stringsElement: '#typed-strings',
-      typeSpeed: 70,
-      startDelay: 60,
-      backSpeed: 50,
-      backDelay: 500,
-      loop: true,
-      loopCount: false,
-      showCursor: false,
-    });
-    const swiperAbout = new Swiper('.swiperAbout', {
-      loop:true,
-      spaceBetween: 50,
-      slidesPerView: 1,
-      autoplay:true,
-      autoplay: {
-        delay: 5000,
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        bulletClass: 'swiper-pagination-bullet',
-        clickable: true,
-      },
-    });
-    const swiperInterest = new Swiper('.swiperInterest', {
-      loop:true,
-      spaceBetween: 50,
-      slidesPerView: 1,
-      autoplay:true,
-      autoplay: {
-        delay: 5000,
-      },
-    });
-  </script>
+  <script src="js/type.js"></script>
+  <script src="js/swiper.js"></script>
 </body>
 </html>
