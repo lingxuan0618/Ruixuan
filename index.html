@@ -30,7 +30,7 @@
         </div>
       </div>
     </div>
-    <div :class="{'d-none': showBackTop === false}" class="position-fixed" style="bottom: 8%; right: 1%;">
+    <div :class="{'d-none': showBackTop === false}" class="position-fixed" style="bottom: 8%; right: 1%;z-index: 100;">
       <a href="#Home"><h1><i class="bi bi-arrow-up-circle" style="font-size: 2rem;"></i></h1></a>
     </div>
     <!-- Home -->
@@ -94,7 +94,7 @@
       <!-- 手機板顯示-不輪播 -->
       <div class="d-sm-none d-flex flex-column justify-content-evenly flex-grow-1 px-5 bg-linen">
         <transition name="fade"></transition>
-        <div class="d-flex justify-content-between align-items-center pt-6">
+        <div class="d-flex justify-content-between align-items-center pt-2 pt-sm-6">
           <div class="border-black" style="border-left: 0.25rem solid #E9E9E9;">
             <h2 class="ps-1">劉睿璇</h2>
           </div>
@@ -114,8 +114,8 @@
           <div>
             <pre class="mb-0"><h4>
 ▹ Whocall • 走著瞧股份有限公司
-
 　2019.06 ~ 2020.06
+
 　- QA 實習生
             </h4></pre>
           </div>
@@ -126,48 +126,86 @@
       </div>
     </section>
     <!-- Skills -->
-    <section id="Skills" class="d-flex justify-content-center align-items-center vh-100 bg-mainBlue">
+    <section id="Skills" class="d-flex justify-content-sm-center align-items-center vh-100 bg-mainBlue w-p100">
       <!-- 電腦板顯示 -->
-      <div class="d-none d-sm-flex align-items-center justify-content-evenly bg-bgBlue"
-      style="min-width: 70vw;min-height: 50vh;">
-        <div v-for="item in skillsList" :key="item.name" class="skillsBlock p-2">
-          <img :src="item.url" alt="" class="w-30">
-          <h3 class="pt-8 text-center">{{item.name}}</h3>
+      <div class="d-none d-sm-flex position-relative align-items-center justify-content-evenly bg-bgBlue"
+      style="min-width: 70vw;min-height: 70vh;">
+        <div class="position-absolute p-1 w-p75 bg-white rounded" style="top:-5%">
+          <h2 class="text-center">Skills</h2>
+        </div>
+        <div v-for="(item, index) in skillsList" :key="item.name">
+          <div class="d-flex position-relative">
+            <div class="skillsBlock p-2" @mouseover="this.mouseOver = item.name"
+            @mouseleave="this.mouseOver = ''">
+              <img :src="item.url" alt="" class="w-30">
+              <h3 class="pt-8 text-center">{{item.name}}</h3>
+            </div>
+            <div v-if="mouseOver === item.name" class="position-absolute d-flex align-items-center start-100 px-4 bg-white h-p100"
+            style="z-index:100;width: max-content;border-top-right-radius: 0.25rem;border-bottom-right-radius: 0.25rem;">
+              <div class="py-4" v-if="index === 0">
+                <h4>{{erpContent.title}}</h4>
+                <ul>
+                  <li v-for="item in erpContent.content">{{item.name}}</li>
+                </ul>
+              </div>
+              <div class="py-4" v-if="index === 1">
+                <h4>{{misContent.title}}</h4>
+                <ul>
+                  <li v-for="item in misContent.content">{{item.name}}</li>
+                </ul>
+              </div>
+              <div class="py-4" v-if="index === 2">
+                <h4>{{pythonContent.title}}</h4>
+                <ul>
+                  <li v-for="item in pythonContent.content">{{item.name}}</li>
+                </ul>
+              </div>
+              <div class="py-4" v-if="index === 3">
+                <h4>{{sqlContent.title}}</h4>
+                <ul>
+                  <li v-for="item in sqlContent.content">{{item.name}}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <!-- 手機板顯示 -->
-      <div class="d-sm-none d-flex flex-column justify-content-evenly h-p100">
+      <div class="d-sm-none d-flex flex-column justify-content-evenly position-relative bg-bgBlue h-p90 w-p100">
+        <div class="position-absolute p-1 w-p75 bg-white rounded top-0 start-50" style="transform: translate(-50%, -50%);">
+          <h3 class="text-center">Skills</h3>
+        </div>
         <div v-for="(item, index) in skillsList" :key="item.name"
-        class="d-flex align-content-center"
+        class="d-flex align-content-center jus"
         :class="{'flex-row-reverse': index % 2 !== 0}">
-          <div class="d-flex align-items-center px-3">
+          <div class="d-flex align-items-center justify-content-center px-3 col-4">
             <img :src="item.url" alt="" class="w-15">
           </div>
-          <div class="d-flex flex-column justify-content-center w-p75 px-4 bg-white rounded"
+          <div class="col-8 d-flex flex-column justify-content-center w-p75 py-4 mx-2 bg-white rounded"
           v-if="index === 0">
-            <h4>{{erpContent.title}}</h4>
-            <ul class="ps-6">
+            <h4 class="d-inline-block m-auto pe-8">{{erpContent.title}}</h4>
+            <ul class="ps-6 mb-0 m-auto">
               <li v-for="item in erpContent.content">{{item.name}}</li>
             </ul>
           </div>
-          <div class="d-flex flex-column justify-content-center w-p75 px-4 bg-white rounded"
+          <div class="col-8 d-flex flex-column justify-content-center w-p75 py-4 mx-2 bg-white rounded"
           v-if="index === 1">
-            <h4>{{misContent.title}}</h4>
-            <ul class="ps-6">
+            <h4 class="d-inline-block m-auto pe-8">{{misContent.title}}</h4>
+            <ul class="ps-6 mb-0 m-auto">
               <li v-for="item in misContent.content">{{item.name}}</li>
             </ul>
           </div>
-          <div class="d-flex flex-column justify-content-center w-p75 px-4 bg-white rounded"
+          <div class="col-8 d-flex flex-column justify-content-center w-p75 py-4 mx-2 bg-white rounded"
           v-if="index === 2">
-            <h4>{{pythonContent.title}}</h4>
-            <ul class="ps-6">
+            <h4 class="d-inline-block m-auto pe-8">{{pythonContent.title}}</h4>
+            <ul class="ps-6 mb-0 m-auto">
               <li v-for="item in pythonContent.content">{{item.name}}</li>
             </ul>
           </div>
-          <div class="d-flex flex-column justify-content-center w-p75 px-4 bg-white rounded"
+          <div class="col-8 d-flex flex-column justify-content-center w-p75 py-4 mx-2 bg-white rounded"
           v-if="index === 3">
-            <h4>{{sqlContent.title}}</h4>
-            <ul class="ps-6">
+            <h4 class="d-inline-block m-auto pe-8">{{sqlContent.title}}</h4>
+            <ul class="ps-6 mb-0 m-auto">
               <li v-for="item in sqlContent.content">{{item.name}}</li>
             </ul>
           </div>
@@ -180,12 +218,23 @@
         <h2>Interest</h2>
       </div>
       <div class="pt-6">
-        <div class="swiper swiperInterest">
-          <!-- Additional required wrapper -->
+        <!-- 電腦板顯示 -->
+        <div class="d-none d-sm-block swiper swiperInterest">
           <div class="swiper-wrapper" style="width: 45vw;">
             <!-- Slides -->
             <div v-for="item in interestCarousel" :key="item.name" class="swiper-slide">
               <img :src="item.url" alt="" class="h-p100 w-p100">
+              <h3 class="pt-4 text-center">{{item.name}}</h3>
+            </div>
+          </div>
+        </div>
+        <!-- 手機板顯示 -->
+        <div class="d-sm-none swiper swiperInterest">
+          <div class="swiper-wrapper" style="width: 100vw;">
+            <!-- Slides -->
+            <div v-for="item in interestCarousel" :key="item.name" class="swiper-slide">
+              <img :src="item.url" alt="" class="w-p100"
+              :style="item.name === 'Photography' ? 'height: 60vh' :''">
               <h3 class="pt-4 text-center">{{item.name}}</h3>
             </div>
           </div>

@@ -3,6 +3,7 @@ const RuiXuanApp = Vue.createApp({
     return {
       showNav: true,
       showBackTop: false,
+      mouseOver: '',
       interestCarousel: [
         {
           url: 'images/interesting/photography.jpg',
@@ -81,7 +82,7 @@ const RuiXuanApp = Vue.createApp({
         ],
       },
       sqlContent: {
-        title: '聯合資訊 ERP 學程',
+        title: 'SQL',
         content: [
           {
             name: 'ERP 功能撰寫指定使用語法',
@@ -128,7 +129,7 @@ const RuiXuanApp = Vue.createApp({
         this.showNav = true;
         this.showBackTop = false;
       }
-      console.log(scrollTop);
+      // console.log(scrollTop);
     },
   },
   created() {
