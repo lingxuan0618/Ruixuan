@@ -4,6 +4,7 @@ const RuiXuanApp = Vue.createApp({
       showNav: true,
       showBackTop: false,
       mouseOver: '',
+      anchorName: 'Home',
       interestCarousel: [
         {
           url: 'images/interesting/photography.jpg',
@@ -116,12 +117,10 @@ const RuiXuanApp = Vue.createApp({
     }
   },
   methods: {
-    gotoPosition(e) {
-      console.log(e);
-    },
     handleScroll() {
       let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-      let screenHeight = window.screen.height;
+      let screenHeight = window.innerHeight;
+      // 控制header/回到最上面要不要出現
       if(scrollTop > 10) {
         this.showNav = false;
         this.showBackTop = true;
@@ -129,7 +128,17 @@ const RuiXuanApp = Vue.createApp({
         this.showNav = true;
         this.showBackTop = false;
       }
-      // console.log(scrollTop);
+      // 判斷錨點位置
+      if (scrollTop >= 3 * screenHeight -2) {
+        this.anchorName = 'Interest';
+      } else if (scrollTop >= 2 * screenHeight -2) {
+        this.anchorName = 'Skills';
+      } else if (scrollTop >= screenHeight -2) {
+        this.anchorName = 'About';
+      } else {
+        this.anchorName = 'Home';
+      }
+      window.history.pushState({}, 0, `#${this.anchorName}`);
     },
   },
   created() {

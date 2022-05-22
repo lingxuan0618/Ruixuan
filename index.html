@@ -282,9 +282,8 @@
             <div class="d-flex justify-content-end cursor-pointer" data-bs-dismiss="modal">
               <i class="bi bi-x-lg text-white"></i>
             </div>
-            <div v-for="item in footerMenu" :key="item.name" class="p-4"
-            @click="gotoPosition($event)">
-              <a :href="item.href"><h4>{{item.name}}</h4></a>
+            <div v-for="item in footerMenu" :key="item.name" class="p-4">
+              <a :href="item.href"><h4 :class="{'text-danger': anchorName === item.name}">{{item.name}}</h4></a>
             </div>
           </div>
         </div>
