@@ -62,7 +62,7 @@ li {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 576px) {
   #menu .modal-dialog {
     width: 12.5rem;
   }
