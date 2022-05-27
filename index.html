@@ -144,8 +144,8 @@
             <div v-if="mouseOver === item.name" class="position-absolute d-flex align-items-center start-100 px-4 bg-white h-p100"
             style="z-index:100;width: max-content;border-top-right-radius: 0.25rem;border-bottom-right-radius: 0.25rem;">
               <div class="py-4" v-if="index === 0">
-                <h4 style="font-size: 1.25rem;" class="pb-2">{{erpContent.title}}</h4>
-                <ul>
+                <h4 style="font-size: 1.25rem;" class="py-2">{{erpContent.title}}</h4>
+                <ul class="mb-0">
                   <li v-for="item in erpContent.content">{{item.name}}</li>
                 </ul>
               </div>
@@ -261,13 +261,12 @@
       <div class="modal-dialog">
         <div class="modal-content rounded-0">
           <div class="modal-body">
-            <span>icon copyright</span>
-            <ol class="mb-0">
+            <span>ICON COPYRIGHT</span>
+            <ol class="my-4">
               <li>python & ERP & Mail icons created by Freepi</li>
               <li>SQL icons created by Smashicons</li>
               <li>it support  icons created by srip</li>
             </ol>
-            <br>
             <span>And all of the above are from Flaticon</span>
           </div>
           <div class="modal-footer">
