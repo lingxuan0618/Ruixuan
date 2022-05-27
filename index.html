@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="stylesheet" href="css/bootstrap-5.0.0/scss/bootstrap.css">
   <link rel="stylesheet" href="css/scss/main.css">
 </head>
@@ -49,11 +50,11 @@
     </section>
     <!-- About -->
     <section id="About" class="d-flex flex-column flex-sm-row justify-content-sm-center align-items-sm-center vh-100">
-      <div class="col-12 col-sm-4">
+      <div class="col-12 col-sm-4" data-aos="fade-in">
         <img src="images/personal.JPG" alt="" class="w-p100">
       </div>
       <!-- 電腦板顯示 -->
-      <div class="d-none d-sm-flex flex-column justify-content-center w-90 p-5 bg-linen">
+      <div class="d-none d-sm-flex flex-column justify-content-center w-90 p-5 bg-linen" data-aos="fade-in">
         <div class="d-flex justify-content-between align-items-center pt-6">
           <div class="border-black" style="border-left: 0.25rem solid #E9E9E9;">
             <h2 class="ps-1">劉睿璇</h2>
@@ -93,15 +94,14 @@
       </div>
       <!-- 手機板顯示-不輪播 -->
       <div class="d-sm-none d-flex flex-column justify-content-evenly flex-grow-1 px-5 bg-linen">
-        <transition name="fade"></transition>
-        <div class="d-flex justify-content-between align-items-center pt-2 pt-sm-6">
+        <div class="d-flex justify-content-between align-items-center pt-2 pt-sm-6" data-aos="fade-in">
           <div class="border-black" style="border-left: 0.25rem solid #E9E9E9;">
             <h2 class="ps-1">劉睿璇</h2>
           </div>
           <h4 class="text-darkBlue">CYCU.資訊管理學系</h4>
         </div>
         <div>
-          <div>
+          <div data-aos="fade-in">
             <pre class="mb-0"><h4>
 ▹ Goater • 哥德廚具股份有限公司
 　2020.06 ~ 至今
@@ -111,7 +111,7 @@
 　- 營管助理
             </h4></pre>
           </div>
-          <div>
+          <div data-aos="fade-in">
             <pre class="mb-0"><h4>
 ▹ Whocall • 走著瞧股份有限公司
 　2019.06 ~ 2020.06
@@ -120,7 +120,7 @@
             </h4></pre>
           </div>
         </div>
-        <div class="d-flex justify-content-end">
+        <div class="d-flex justify-content-end" data-aos="fade-in">
           <a href="mailto:Therxuans@gmail.com"><h2><i class="bi bi-envelope"></i></h2></a>
         </div>
       </div>
@@ -128,7 +128,7 @@
     <!-- Skills -->
     <section id="Skills" class="d-flex justify-content-sm-center align-items-center vh-100 bg-mainBlue w-p100">
       <!-- 電腦板顯示 -->
-      <div class="d-none d-sm-flex position-relative align-items-center justify-content-evenly bg-bgBlue"
+      <div class="d-none d-sm-flex position-relative align-items-center justify-content-evenly bg-bgBlue" data-aos="fade-in"
       style="min-width: 70vw;min-height: 70vh;">
         <div class="position-absolute p-1 w-p75 bg-white rounded" style="top:-5%">
           <h2 class="text-center">Skills</h2>
@@ -143,25 +143,25 @@
             <div v-if="mouseOver === item.name" class="position-absolute d-flex align-items-center start-100 px-4 bg-white h-p100"
             style="z-index:100;width: max-content;border-top-right-radius: 0.25rem;border-bottom-right-radius: 0.25rem;">
               <div class="py-4" v-if="index === 0">
-                <h4>{{erpContent.title}}</h4>
+                <h4 style="font-size: 1.25rem;" class="pb-2">{{erpContent.title}}</h4>
                 <ul>
                   <li v-for="item in erpContent.content">{{item.name}}</li>
                 </ul>
               </div>
               <div class="py-4" v-if="index === 1">
-                <h4>{{misContent.title}}</h4>
+                <h4 style="font-size: 1.25rem;" class="pb-2">{{misContent.title}}</h4>
                 <ul>
                   <li v-for="item in misContent.content">{{item.name}}</li>
                 </ul>
               </div>
               <div class="py-4" v-if="index === 2">
-                <h4>{{pythonContent.title}}</h4>
+                <h4 style="font-size: 1.25rem;" class="pb-2">{{pythonContent.title}}</h4>
                 <ul>
                   <li v-for="item in pythonContent.content">{{item.name}}</li>
                 </ul>
               </div>
               <div class="py-4" v-if="index === 3">
-                <h4>{{sqlContent.title}}</h4>
+                <h4 style="font-size: 1.25rem;" class="pb-2">{{sqlContent.title}}</h4>
                 <ul>
                   <li v-for="item in sqlContent.content">{{item.name}}</li>
                 </ul>
@@ -176,33 +176,33 @@
           <h3 class="text-center">Skills</h3>
         </div>
         <div v-for="(item, index) in skillsList" :key="item.name"
-        class="d-flex align-content-center jus"
+        class="d-flex align-content-center"
         :class="{'flex-row-reverse': index % 2 !== 0}">
-          <div class="d-flex align-items-center justify-content-center px-3 col-4">
+          <div class="d-flex align-items-center justify-content-center px-3 col-4" data-aos="fade-in">
             <img :src="item.url" alt="" class="w-15">
           </div>
-          <div class="col-8 d-flex flex-column justify-content-center w-p75 py-4 mx-2 bg-white rounded"
+          <div class="col-8 d-flex flex-column justify-content-center w-p75 py-4 mx-2 bg-white rounded" data-aos="fade-in"
           v-if="index === 0">
             <h4 class="d-inline-block m-auto pe-8">{{erpContent.title}}</h4>
             <ul class="ps-6 mb-0 m-auto">
               <li v-for="item in erpContent.content">{{item.name}}</li>
             </ul>
           </div>
-          <div class="col-8 d-flex flex-column justify-content-center w-p75 py-4 mx-2 bg-white rounded"
+          <div class="col-8 d-flex flex-column justify-content-center w-p75 py-4 mx-2 bg-white rounded" data-aos="fade-in"
           v-if="index === 1">
             <h4 class="d-inline-block m-auto pe-8">{{misContent.title}}</h4>
             <ul class="ps-6 mb-0 m-auto">
               <li v-for="item in misContent.content">{{item.name}}</li>
             </ul>
           </div>
-          <div class="col-8 d-flex flex-column justify-content-center w-p75 py-4 mx-2 bg-white rounded"
+          <div class="col-8 d-flex flex-column justify-content-center w-p75 py-4 mx-2 bg-white rounded" data-aos="fade-in"
           v-if="index === 2">
             <h4 class="d-inline-block m-auto pe-8">{{pythonContent.title}}</h4>
             <ul class="ps-6 mb-0 m-auto">
               <li v-for="item in pythonContent.content">{{item.name}}</li>
             </ul>
           </div>
-          <div class="col-8 d-flex flex-column justify-content-center w-p75 py-4 mx-2 bg-white rounded"
+          <div class="col-8 d-flex flex-column justify-content-center w-p75 py-4 mx-2 bg-white rounded" data-aos="fade-in"
           v-if="index === 3">
             <h4 class="d-inline-block m-auto pe-8">{{sqlContent.title}}</h4>
             <ul class="ps-6 mb-0 m-auto">
@@ -214,12 +214,12 @@
     </section>
     <!-- Interest -->
     <section id="Interest" class="d-flex flex-column justify-content-sm-center align-items-center vh-100 mt-10 mt-sm-0">
-      <div class="p-1 bg-mainBlue rounded text-center" style="width: 75vw;">
+      <div class="p-1 bg-mainBlue rounded text-center" style="width: 75vw;" data-aos="fade-in">
         <h2>Interest</h2>
       </div>
       <div class="pt-6">
         <!-- 電腦板顯示 -->
-        <div class="d-none d-sm-block swiper swiperInterest">
+        <div class="d-none d-sm-block swiper swiperInterest" data-aos="fade-in">
           <div class="swiper-wrapper" style="width: 45vw;">
             <!-- Slides -->
             <div v-for="item in interestCarousel" :key="item.name" class="swiper-slide">
@@ -229,7 +229,7 @@
           </div>
         </div>
         <!-- 手機板顯示 -->
-        <div class="d-sm-none swiper swiperInterest">
+        <div class="d-sm-none swiper swiperInterest" data-aos="fade-in">
           <div class="swiper-wrapper" style="width: 100vw;">
             <!-- Slides -->
             <div v-for="item in interestCarousel" :key="item.name" class="swiper-slide">
@@ -296,6 +296,7 @@
   <script src="js/lib/vue@3.2.33.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
   <!-- 自定義js -->
   <script src="js/index.js"></script>

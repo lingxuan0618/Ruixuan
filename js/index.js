@@ -142,6 +142,8 @@ const RuiXuanApp = Vue.createApp({
     },
   },
   created() {
+    //載入aos淡入套件
+    AOS.init();
     window.addEventListener("scroll", this.handleScroll);
   },
 })
