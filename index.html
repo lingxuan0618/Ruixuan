@@ -9,9 +9,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&family=Nunito:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="stylesheet" href="css/bootstrap-5.0.0/scss/bootstrap.css">
   <link rel="stylesheet" href="css/scss/main.css">
 </head>
@@ -183,28 +184,28 @@
           </div>
           <div class="col-8 d-flex flex-column justify-content-center w-p75 py-4 mx-2 bg-white rounded" data-aos="fade-in"
           v-if="index === 0">
-            <h4 class="d-inline-block m-auto pe-8">{{erpContent.title}}</h4>
+            <h4 class="d-inline-block m-auto">{{erpContent.title}}</h4>
             <ul class="ps-6 mb-0 m-auto">
               <li v-for="item in erpContent.content">{{item.name}}</li>
             </ul>
           </div>
           <div class="col-8 d-flex flex-column justify-content-center w-p75 py-4 mx-2 bg-white rounded" data-aos="fade-in"
           v-if="index === 1">
-            <h4 class="d-inline-block m-auto pe-8">{{misContent.title}}</h4>
+            <h4 class="d-inline-block m-auto">{{misContent.title}}</h4>
             <ul class="ps-6 mb-0 m-auto">
               <li v-for="item in misContent.content">{{item.name}}</li>
             </ul>
           </div>
           <div class="col-8 d-flex flex-column justify-content-center w-p75 py-4 mx-2 bg-white rounded" data-aos="fade-in"
           v-if="index === 2">
-            <h4 class="d-inline-block m-auto pe-8">{{pythonContent.title}}</h4>
+            <h4 class="d-inline-block m-auto">{{pythonContent.title}}</h4>
             <ul class="ps-6 mb-0 m-auto">
               <li v-for="item in pythonContent.content">{{item.name}}</li>
             </ul>
           </div>
           <div class="col-8 d-flex flex-column justify-content-center w-p75 py-4 mx-2 bg-white rounded" data-aos="fade-in"
           v-if="index === 3">
-            <h4 class="d-inline-block m-auto pe-8">{{sqlContent.title}}</h4>
+            <h4 class="d-inline-block m-auto">{{sqlContent.title}}</h4>
             <ul class="ps-6 mb-0 m-auto">
               <li v-for="item in sqlContent.content">{{item.name}}</li>
             </ul>
@@ -260,14 +261,13 @@
       <div class="modal-dialog">
         <div class="modal-content rounded-0">
           <div class="modal-body">
-            <h6>
-              python : Python icons created by Freepik - Flaticon
-              ERP :Erp icons created by Freepik
-              SQL : Sql icons created by Smashicons - Flaticon
-              MIS : it support icons created by srip - Flaticon
-              EMAIL : Mail icons created by Freepik - Flaticon
-              Go to the top icons created by Anas Mannaa - Flaticon
-            </h6>
+            <span>icon copyright</span>
+            <ol class="mb-0">
+              <li>python & ERP & Mail icons created by Freepi</li>
+              <li>SQL icons created by Smashicons</li>
+              <li>it support  icons created by srip</li>
+            </ol>
+            <span>And all of the above are from Flaticon</span>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
